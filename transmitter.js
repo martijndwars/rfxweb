@@ -2,6 +2,7 @@ var debug = require('debug')('rfxweb:transmitter');
 var events = require('events');
 var util = require('util');
 var net = require('net');
+var convert = require('./convert');
 
 function Transmitter(host, port) {
   events.EventEmitter.call(this);
@@ -37,25 +38,37 @@ Transmitter.prototype.connect = function (host, port) {
   })
 };
 
-Transmitter.prototype.lightOn = function () {
+Transmitter.prototype.lightOn = function (data) {
   var self = this;
 
   // I have no clue..
   this.client.write(new Buffer('\x20', 'binary'), function () {
-    // Set A1 on
-    self.client.write(new Buffer('\x60\x9f\x00\xff', 'binary'), function () {
-      debug('[info] set a1 on');
+    // Compose message
+    var msg = new Buffer([
+      convert.unit(data.unit), 0xff - convert.unit(data.unit),
+      convert.device(data.device), 0xff - convert.device(data.device)
+    ]);
+
+    // Turn device on
+    self.client.write(msg, function () {
+      debug('[info] set ' + data.unit + data.device + ' on');
     });
   });
 };
 
-Transmitter.prototype.lightOff = function () {
+Transmitter.prototype.lightOff = function (data) {
   var self = this;
 
   // I have no clue..
   this.client.write(new Buffer('\x20', 'binary'), function () {
-    // Set A1 off
-    self.client.write(new Buffer('\x60\x9f\x20\xdf', 'binary'), function () {
+    // Compose message
+    var msg = new Buffer([
+      convert.unit(data.unit), 0xff - convert.unit(data.unit),
+      convert.device(data.device) || 0x20, 0xff - (convert.device(data.device) || 0x20)
+    ]);
+
+    // Turn device off
+    self.client.write(msg, function () {
       debug('[info] set a1 off');
     });
   });

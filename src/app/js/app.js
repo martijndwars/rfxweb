@@ -21,10 +21,12 @@ define([
         app.run(function (device) {
             var devices = [{
                 name: 'Wallswitch',
-                code: 'A1'
+                unit: 'A',
+                device: '1'
             }, {
                 name: 'Bedroom',
-                code: 'A2'
+                unit: 'A',
+                device: '2'
             }];
 
             devices.forEach(device.add);

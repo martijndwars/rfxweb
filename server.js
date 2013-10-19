@@ -21,11 +21,11 @@ receiver.connect('192.168.10.3', 10001);
 
 app.io.sockets.on('connection', function (socket) {
   socket.on('lightOn', function (data) {
-    transmitter.lightOn();
+    transmitter.lightOn(data);
   });
 
   socket.on('lightOff', function (data) {
-    transmitter.lightOff();
+    transmitter.lightOff(data);
   });
 
   transmitter.on('ACK', function () {

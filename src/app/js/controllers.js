@@ -10,15 +10,15 @@ define(['angular'], function (angular) {
 
             $scope.lightOn = function (device) {
                 socket.emit('lightOn', {
-                    code: device.code,
-                    state: STATE_ON
+                    unit: device.unit,
+                    device: device.device
                 });
             }
 
             $scope.lightOff = function (device) {
                 socket.emit('lightOff', {
-                    code: device.code,
-                    state: STATE_OFF
+                    unit: device.unit,
+                    device: device.device
                 });
             }
 
