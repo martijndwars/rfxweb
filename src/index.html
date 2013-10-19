@@ -53,17 +53,7 @@
             </div>
         </nav>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">Lights</div>
-            <div class="panel-body">
-                <ul class="list-group">
-                    <li class="list-group-item device">
-                        <span class="on"><button type="button" class="btn btn-primary btn-lg btn-block" id="A1On">A1 on</button></span>
-                        <span class="off"><button type="button" class="btn btn-primary btn-lg btn-block" id="A1Off">A1 off</button></span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <div ng-view></div>
 
         <script data-main="app/js/main" src="/ext/requirejs/require.js"></script>
     </body>
