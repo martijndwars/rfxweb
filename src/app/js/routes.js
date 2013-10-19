@@ -5,6 +5,9 @@ define(['angular', 'app'], function(angular, app) {
         $routeProvider.when('/dashboard', {
             templateUrl: 'app/partials/dashboard.html',
             controller: 'DashboardCtrl'
+        }).when('/device/add', {
+            templateUrl: 'app/partials/devices/add.html',
+            controller: 'DevicesCtrl'
         });
         $routeProvider.otherwise({
             redirectTo: '/dashboard'
