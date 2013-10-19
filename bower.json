@@ -1,0 +1,19 @@
+{
+  "name": "rfxweb",
+  "version": "0.0.0",
+  "authors": [
+    "Martijn Dwars <ikben@martijndwars.nl>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.0"
+  }
+}

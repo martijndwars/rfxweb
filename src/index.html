@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>RfxCom client</title>
+
+        <!-- Style: Bootstrap -->
+        <link rel="stylesheet" href="/ext/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="/ext/bootstrap/dist/css/bootstrap-theme.css" />
+
+        <!-- Style: custom -->
+        <link rel="stylesheet" href="/assets/css/global.css" />
+
+        <!-- Script: jQuery -->
+        <script src="/ext/jquery/jquery.js"></script>
+
+        <!-- Script: Bootstrap -->
+        <script src="/ext/bootstrap/dist/js/bootstrap.js"></script>
+
+        <!-- Script: Socket.io -->
+        <script src="/socket.io/socket.io.js"></script>
+
+        <!-- Script: custom -->
+        <script src="/assets/js/global.js"></script>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="/ext/bootstrap/assets/js/html5shiv.js"></script>
+          <script src="/ext/bootstrap/assets/js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">RfxWeb</a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Dashboard</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Light</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Lights</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item device">
+                        <span class="on"><button type="button" class="btn btn-primary btn-lg btn-block" id="A1On">A1 on</button></span>
+                        <span class="off"><button type="button" class="btn btn-primary btn-lg btn-block" id="A1Off">A1 off</button></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

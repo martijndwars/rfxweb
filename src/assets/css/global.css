@@ -1,0 +1,15 @@
+span.on {
+    width: 50%;
+    float: left;
+    padding-right: 10px;
+}
+
+span.off {
+    width: 50%;
+    float: left;
+    padding-left: 10px;
+}
+
+li.device {
+    overflow: hidden;
+}
