@@ -1,15 +1,13 @@
 <div class="panel panel-default">
     <div class="panel-heading">Lights</div>
-    <div class="panel-body">
-        <ul class="list-group">
-            <li class="list-group-item device" ng-repeat="device in devices">
-                <span class="on">
-                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="lightOn(device)">{{device.name}} on</button>
-                </span>
-                <span class="off">
-                    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="lightOff(device)">{{device.name}} off</button>
-                </span>
-            </li>
-        </ul>
-    </div>
+    <ul class="list-group">
+        <li class="list-group-item device" ng-repeat="device in devices">
+            <span class="on">
+                <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="lightOn(device)">{{device.name}} on</button>
+            </span>
+            <span class="off">
+                <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="lightOff(device)">{{device.name}} off</button>
+            </span>
+        </li>
+    </ul>
 </div>
