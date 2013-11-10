@@ -64,12 +64,12 @@ Transmitter.prototype.lightOff = function (data) {
     // Compose message
     var msg = new Buffer([
       convert.unit(data.unit), 0xff - convert.unit(data.unit),
-      convert.device(data.device) || 0x20, 0xff - (convert.device(data.device) || 0x20)
+      convert.device(data.device) | 0x20, 0xff - (convert.device(data.device) | 0x20)
     ]);
 
     // Turn device off
     self.client.write(msg, function () {
-      debug('[info] set a1 off');
+      debug('[info] set ' + data.unit + data.device + ' off');
     });
   });
 };
