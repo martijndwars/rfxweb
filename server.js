@@ -11,12 +11,13 @@ app.listen(8080);
 
 
 
+var ip = '192.168.178.4';
 
 var transmitter = require('./transmitter');
-transmitter.connect('192.168.10.3', 10002);
+transmitter.connect(ip, 10002);
 
 var receiver = require('./receiver');
-receiver.connect('192.168.10.3', 10001);
+receiver.connect(ip, 10001);
 
 
 app.io.sockets.on('connection', function (socket) {
