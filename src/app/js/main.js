@@ -5,7 +5,7 @@ require.config({
         angularSocketIo: '../../ext/angular-socket-io/socket',
         socketIo: '/socket.io/socket.io.js',
         bootstrap: '../../ext/bootstrap/dist/js/bootstrap',
-        jquery: '../../ext/jquery/jquery'
+        jquery: '../../ext/jquery/dist/jquery'
     },
     baseUrl: 'app/js',
     shim: {
